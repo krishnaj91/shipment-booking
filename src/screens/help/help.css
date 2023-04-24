@@ -1,0 +1,7 @@
+.help-icon{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 1;
+    cursor: pointer;
+}
