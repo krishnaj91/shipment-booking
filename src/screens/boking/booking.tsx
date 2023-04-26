@@ -36,14 +36,12 @@ const Booking = () => {
 
   const handleAuto = () => {
     setForm({...form,
-      
       name: "krishna",
-      mobile: "9898756745",
+      mobile: "9999999999",
       from: "Hyderabad",
       to: "New Delhi",
       weight: "10",
       amount: "500",
-    
     });
   };
 
@@ -229,9 +227,9 @@ const Booking = () => {
         />
         <p className="err">{formError.amount}</p>
         <button onClick={handleSubmit}>SUBMIT</button>
-        {/* <span style={{ color: "#266c8f" }} onClick={handleAuto}>
-          AUTOFILL (Sample Date)
-        </span> */}
+        <span style={{ color: "#266c8f" }} onClick={handleAuto}>
+          AUTOFILL (Sample Date - TEST)
+        </span>
       </div>
 
       <Modal
