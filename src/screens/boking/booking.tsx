@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState  } from "react";
 import "./booking.css";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -6,8 +6,10 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import DoneIcon from "@mui/icons-material/Done";
 import CloseIcon from "@mui/icons-material/Close";
+import { useNavigate } from "react-router-dom";
 
 const Booking = () => {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     id: "",
     name: "",
@@ -18,6 +20,7 @@ const Booking = () => {
     amount: "",
     date: "",
     time: "",
+    estimatedDelivery:''
   });
   const [formError, setFormError] = useState({
     id: "",
@@ -31,8 +34,24 @@ const Booking = () => {
   const [open, setOpen] = React.useState(false);
   const [copy, setCopy] = React.useState(false);
 
+  const handleAuto = () => {
+    setForm({...form,
+      
+      name: "krishna",
+      mobile: "9898756745",
+      from: "Hyderabad",
+      to: "New Delhi",
+      weight: "10",
+      amount: "500",
+    
+    });
+  };
+
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+    navigate("/tracking");
+  };
 
   const handleChange = (name: any, value: any) => {
     setForm((preValue) => ({ ...preValue, [name]: value }));
@@ -107,9 +126,12 @@ const Booking = () => {
         id: generateRandomString(12),
         date: date,
         time: time,
+        estimatedDelivery: formattedEndDate
       });
       handleOpen();
+      sessionStorage.setItem("data", JSON.stringify(form));
     }
+    
   };
 
   const handleCopy = () => {
@@ -118,8 +140,22 @@ const Booking = () => {
   };
 
   useEffect(() => {
-    sessionStorage.setItem("order", form.id);
+    if (
+      form.name.length > 2 &&
+      form.mobile.length >= 10 &&
+      form.from.length > 2 &&
+      form.to.length > 2 &&
+      form.weight &&
+      form.amount
+    ) {
+      sessionStorage.setItem("order", form.id);
+    }
+    if(open===true){
+      sessionStorage.setItem("data", JSON.stringify(form));
+    }
   });
+
+ 
 
   return (
     <>
@@ -193,6 +229,9 @@ const Booking = () => {
         />
         <p className="err">{formError.amount}</p>
         <button onClick={handleSubmit}>SUBMIT</button>
+        {/* <span style={{ color: "#266c8f" }} onClick={handleAuto}>
+          AUTOFILL (Sample Date)
+        </span> */}
       </div>
 
       <Modal
@@ -238,9 +277,10 @@ const Booking = () => {
             Estimated Delivery : <b className="red">{formattedEndDate}</b>
           </Typography>
           <div className="modal-btn">
-          <Button variant="contained" onClick={handleClose}>
-            OK
-          </Button></div>
+            <Button variant="contained" onClick={handleClose}>
+              OK
+            </Button>
+          </div>
         </Box>
       </Modal>
     </>
