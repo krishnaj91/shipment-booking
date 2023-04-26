@@ -1,0 +1,38 @@
+.tracking{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.tracking h1{
+    color: #EDE700;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    background-color: #0F3446;
+    border: 2px solid #369090;
+    border-radius: 30px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 25px 0;
+}
+
+.search-inpt{
+    height: 30px;
+    padding: 10px;
+    font-size: 22px;
+    border-radius: 20px;
+    border: none;
+}
+
+.search-icon{
+    color: #369090;
+}
+
+.search-inpt:focus{
+    border: none;
+}

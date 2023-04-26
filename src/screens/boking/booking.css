@@ -1,0 +1,35 @@
+.err{
+    color: red;
+    position: relative;
+}
+
+.booking{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.booking h1{
+    color: #EDE700;
+}
+
+.booking button{
+    width: 100px;
+    height: 40px;
+    border: 1px solid #369090;
+    color: #EDE700;
+    background-color: #0F3446;
+    cursor: pointer;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+.inpt{
+    height: 30px;
+    width: 230px;
+    padding: 10px;
+    font-size: 18px;
+    margin-top: 15px;
+}

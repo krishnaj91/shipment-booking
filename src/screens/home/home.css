@@ -1,0 +1,59 @@
+.home{
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home div{
+    margin: 20px 0;
+}
+
+.home-title{
+    color: #EDE700 !important;
+    margin: 15px 0;
+    font-size: 35px;
+}
+
+.home h1{
+    color: #369090;
+}
+
+.home p{
+    color: #266c8f;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.home li{
+    list-style: circle;
+    font-size: 20px;
+    color: #266c8f;
+}
+
+.home span{
+    color: #EDE700 !important;
+    cursor: pointer;
+}
+
+.home-contact{
+    margin: 20px 10%;
+}
+
+.home-contact h1{
+    color: #369090;
+}
+
+.home-contact h2{
+    color: #266c8f;
+}
+
+.home-contact p{
+    color: #EDE700;
+}
+
+.home-contact span{
+    color: #266c8f;
+}
+

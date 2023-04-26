@@ -7,6 +7,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #0C1C29;
   min-height: 100vh;
+  caret-color: #EDE700;
+  outline-color: coral;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+input{
+  outline: none;
+  background-color: #0F3446;
+  border: 1px solid #369090;
+  color: white;
+}
+
+input:focus{
+  border: 1px solid #EDE700;
 }
 
 code {

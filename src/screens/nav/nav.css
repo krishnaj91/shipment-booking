@@ -1,0 +1,17 @@
+.nav{
+    background-color: #0F3446;
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav-items{
+    color: #369090;
+    text-decoration: none;
+}
+
+.nav-active{
+    color: #EDE700 !important;
+    text-decoration: underline;
+}

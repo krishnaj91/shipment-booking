@@ -1,12 +1,15 @@
 import React from 'react'
 import {Link, useLocation} from 'react-router-dom'
+import './nav.css'
 
 const Nav = () => {
-    const path = useLocation()
+    const location = useLocation()
+    
   return (
-    <div>
-        <Link to='/booking'>BOOKING</Link>
-        <Link to='/tracking'>TRACKING</Link>
+    <div className='nav'>
+        <Link to='/' className={location.pathname==='/' ? 'nav-active' : 'nav-items'}>HOME</Link>
+        <Link to='/booking' className={location.pathname==='/booking' ? 'nav-active' : 'nav-items'}>BOOKING</Link>
+        <Link to='/tracking' className={location.pathname==='/tracking' ? 'nav-active' : 'nav-items'}>TRACKING</Link>
     </div>
   )
 }
