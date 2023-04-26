@@ -33,3 +33,32 @@
     font-size: 18px;
     margin-top: 15px;
 }
+
+.green{
+    color: green;
+}
+
+.red{
+    color: red;
+}
+
+.copy{
+    color: blue;
+    padding-left: 5px;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: underline;
+}
+
+.cross{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.modal-btn{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
